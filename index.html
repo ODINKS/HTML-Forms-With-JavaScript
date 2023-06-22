@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tiide Lab Student Registration Form.</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body style="background-color: rgba(223, 94, 47, 0.795);">
+    <div class="main">
+        <form action="" class="form" autocomplete="on" onsubmit="return previewData(event)">
+            <!-- Header -->
+            <div class="header">
+                <!-- 1 -->
+                <div class="logo">
+                    <img src="logo.jpg" alt="My Logo" srcset="">
+                </div>
+                <!-- 2 -->
+                <div class="heading">
+                    <h1>Student Registration Form</h1>
+                    <p>
+                        Fill out the form to apply for the training courses.
+                        You can consider your application accepted after you receive a confirmation email.
+                    </p>
+                </div>
+                <!-- 3 -->
+                <div style="clear: left;"></div>
+            </div>
+            <!-- Student Information -->
+            <div>
+                <h2>Student Information</h2>
+                <input type="text" name="firstname" id="firstname" autocomplete="on" class="name"
+                    placeholder="Full Name" required style="margin-left: 0;">
+                <input type="text" name="middlename" id="middlename" autocomplete="on" class="name"
+                    placeholder="Middle Name" required>
+                <input type="text" name="lastname" id="lastname" autocomplete="on" class="name" placeholder="Last Name"
+                    required><br>
+                <input type="date" name="dateofbirth" id="dateofbirth" autocomplete="on" required>
+                <input type="text" name="studentid" id="studentid" autocomplete="on" placeholder="Student ID" required>
+            </div>
+            <!-- Address -->
+            <div>
+                <h2>Address</h2>
+                <input type="text" name="address" id="address" autocomplete="on" placeholder="Student Address" required>
+                <input type="text" name="city" id="city" autocomplete="on" placeholder="City" required>
+                <input type="text" name="state" id="state" autocomplete="on" placeholder="State/Province" required>
+                <input type="text" name="country" id="country" autocomplete="on" placeholder="Country" required>
+                <input type="text" name="zipcode" id="zipcode" autocomplete="on" placeholder="Zip Code" required>
+            </div>
+            <!-- Contact Information -->
+            <div>
+                <h2>Contact Information</h2>
+                <input type="email" name="email" id="email" autocomplete="on" placeholder="E-mail" required>
+                <input type="tel" name="phonenumber" id="phonenumber" autocomplete="on" placeholder="Phone Number"
+                    required>
+            </div>
+            <!-- Courses -->
+            <div>
+                <h2>Courses</h2>
+                <div class="courses">
+                    <button onclick="addCourse(event)"><strong
+                            style="font-size: larger; padding-right: 10px;">+</strong> Add new record</button>
+                    <!-- course -->
+                    <div style="width: 98%; border: 1px solid gray; margin-top: 0.5%;">
+                        <select name="course" id="course">
+                            <option value="" disabled="disabled" selected>Course</option>
+                            <option value="Backend">Backend</option>
+                            <option value="Frontend">Frontend</option>
+                            <option value="Fullstack">Fullstack</option>
+                        </select>
+                        <!-- Level -->
+                        <select name="level" id="level">
+                            <option value="" disabled="disabled" selected>Level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                        <!-- Language -->
+                        <select name="language" id="language">
+                            <option value="" disabled="disabled" selected>Language</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="Python">Python</option>
+                            <option value="Php">Php</option>
+                            <option value="Ruby">Ruby</option>
+                        </select>
+                        <!-- Start Date -->
+                        <select name="startdate" id="startdate">
+                            <option value="" disabled="disabled" selected>Start Date</option>
+                            <option value="June-2023">June 2023</option>
+                            <option value="July-2023">July-2023</option>
+                            <option value="August-2023">August-2023</option>
+                        </select>
+                    </div>
+                    <table id="courseTable">
+                        <tr>
+                            <th>Course</th>
+                            <th>Level</th>
+                            <th>Language</th>
+                            <th>Start Date</th>
+                        </tr>
+                    </table>
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <h2>Course Details</h2>
+                            <div id="personalInfo" style="margin-bottom: 30px;">
+                                <table id="modalTable">
+                                    <tr>
+                                        <th>Course</th>
+                                        <th>Level</th>
+                                        <th>Language</th>
+                                        <th>Start Date</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button class="my-button" onclick="closeModal()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Comment. -->
+            <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Comments"></textarea><br>
+            <!-- Submit button -->
+            <input type="submit" value="SEND REQUEST" class="submit">
+        </form>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
